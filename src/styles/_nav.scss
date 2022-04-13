@@ -1,0 +1,11 @@
+.nav-tabs-bordered {
+    border-bottom: 2px solid $border-color;
+
+    .nav-link {
+        border: none;
+
+        &.active {
+            border-bottom: 2px solid $primary;
+        }
+    }
+}

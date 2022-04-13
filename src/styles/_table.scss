@@ -1,7 +1,22 @@
 .table {
-  thead {
-    th {
-      border-top: none;
+    thead {
+        th {
+            border-top: none;
+        }
     }
-  }
+
+    &.table-top-borderless {
+        tr:first-child {
+            th,
+            td {
+                border-top: none;
+            }
+        }
+    }
+
+    &.detail-view {
+        th {
+            font-weight: normal;
+        }
+    }
 }
