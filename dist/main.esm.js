@@ -814,7 +814,12 @@ __vue_render__$1._withStripped = true;
 
 Vue.use(Vuex);
 
-var store = new Vuex.Store({});
+var store = new Vuex.Store({
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {}
+});
 
 Vue.use(BootstrapVue);
 

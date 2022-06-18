@@ -820,7 +820,12 @@
 
   Vue.use(Vuex);
 
-  var store = new Vuex.Store({});
+  var store = new Vuex.Store({
+    state: {},
+    getters: {},
+    mutations: {},
+    actions: {}
+  });
 
   Vue.use(BootstrapVue);
 
