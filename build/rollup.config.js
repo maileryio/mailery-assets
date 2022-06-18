@@ -3,9 +3,9 @@ import vue from 'rollup-plugin-vue';
 import buble from 'rollup-plugin-buble';
 import replace from 'rollup-plugin-replace';
 import resolve from 'rollup-plugin-node-resolve';
-import polyfill from 'rollup-plugin-polyfill';
-import postcss from 'rollup-plugin-postcss';
 import { eslint } from 'rollup-plugin-eslint';
+import postcss from 'rollup-plugin-postcss';
+import polyfill from 'rollup-plugin-polyfill';
 import autoprefixer from 'autoprefixer';
 
 const env = process.env.NODE_ENV || 'development';
@@ -14,14 +14,14 @@ const isProd = env === 'production';
 export default (async () => ({
   input: 'src/index.js',
   output: {
-    name: 'mailery',
+    name: 'mailery.app',
     exports: 'named',
-    sourcemap: true,
     globals: {
       'vue': 'Vue',
       'vuex': 'Vuex',
       'bootstrap-vue': 'BootstrapVue',
-    }
+    },
+    sourcemap: true
   },
   external: [
     'vue',
@@ -32,9 +32,6 @@ export default (async () => ({
     eslint(),
     commonjs(),
     resolve(),
-    polyfill([
-      'whatwg-fetch'
-    ]),
     replace({
       'process.env.NODE_ENV': JSON.stringify(env)
     }),
@@ -54,6 +51,9 @@ export default (async () => ({
     buble({
       objectAssign: 'Object.assign'
     }),
+    polyfill([
+      'whatwg-fetch'
+    ]),
     isProd && (await import('rollup-plugin-terser')).terser()
   ]
 }))();

@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('bootstrap-vue'), require('vue'), require('vuex')) :
   typeof define === 'function' && define.amd ? define(['exports', 'bootstrap-vue', 'vue', 'vuex'], factory) :
-  (global = global || self, factory(global.mailery = {}, global.BootstrapVue, global.Vue, global.Vuex));
+  (global = global || self, factory((global.mailery = global.mailery || {}, global.mailery.app = {}), global.BootstrapVue, global.Vue, global.Vuex));
 }(this, (function (exports, BootstrapVue, Vue, Vuex) { 'use strict';
 
   BootstrapVue = BootstrapVue && BootstrapVue.hasOwnProperty('default') ? BootstrapVue['default'] : BootstrapVue;
