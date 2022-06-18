@@ -812,6 +812,71 @@ __vue_render__$1._withStripped = true;
     undefined
   );
 
+var events = new Vue();
+
+//
+
+var script$2 = {
+  name: 'ui-listener',
+  props: {
+    name: String
+  },
+  mounted: function mounted() {
+    var this$1 = this;
+
+    var ref = this.$props;
+    var name = ref.name;
+    events.$on(name, function (event) { return this$1.event = event; });
+  },
+  data: function data() {
+    return {
+      event: {}
+    }
+  }
+};
+
+/* script */
+var __vue_script__$2 = script$2;
+
+/* template */
+var __vue_render__$2 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("span", [_vm._t("default", null, { event: _vm.event })], 2)
+};
+var __vue_staticRenderFns__$2 = [];
+__vue_render__$2._withStripped = true;
+
+  /* style */
+  var __vue_inject_styles__$2 = undefined;
+  /* scoped */
+  var __vue_scope_id__$2 = undefined;
+  /* module identifier */
+  var __vue_module_identifier__$2 = undefined;
+  /* functional template */
+  var __vue_is_functional_template__$2 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  var __vue_component__$2 = normalizeComponent(
+    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
+    __vue_inject_styles__$2,
+    __vue_script__$2,
+    __vue_scope_id__$2,
+    __vue_is_functional_template__$2,
+    __vue_module_identifier__$2,
+    false,
+    undefined,
+    undefined,
+    undefined
+  );
+
 Vue.use(Vuex);
 
 var store = new Vuex.Store({
@@ -825,8 +890,9 @@ Vue.use(BootstrapVue);
 
 Vue.component(__vue_component__.name, __vue_component__);
 Vue.component(__vue_component__$1.name, __vue_component__$1);
+Vue.component(__vue_component__$2.name, __vue_component__$2);
 
-var index = new Vue({ el: '#app', store: store });
+var app = new Vue({ el: '#app', store: store });
 
-export default index;
+export { app, events };
 //# sourceMappingURL=main.esm.js.map
