@@ -825,18 +825,18 @@
   var script$2 = {
     name: 'ui-listener',
     props: {
-      name: String
+      event: String
     },
     mounted: function mounted() {
       var this$1 = this;
 
       var ref = this.$props;
-      var name = ref.name;
-      events.$on(name, function (event) { return this$1.event = event; });
+      var event = ref.event;
+      events.$on(event, function (data) { return this$1.data = data; });
     },
     data: function data() {
       return {
-        event: {}
+        data: {}
       }
     }
   };
@@ -849,7 +849,7 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("span", [_vm._t("default", null, { event: _vm.event })], 2)
+    return _c("span", [_vm._t("default", null, { data: _vm.data })], 2)
   };
   var __vue_staticRenderFns__$2 = [];
   __vue_render__$2._withStripped = true;

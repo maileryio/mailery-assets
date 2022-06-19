@@ -1,6 +1,6 @@
 <template>
   <span>
-    <slot v-bind:event="event"></slot>
+    <slot v-bind:data="data"></slot>
   </span>
 </template>
 
@@ -10,15 +10,15 @@
   export default {
     name: 'ui-listener',
     props: {
-      name: String
+      event: String
     },
     mounted() {
-      const { name } = this.$props;
-      events.$on(name, (event) => this.event = event);
+      const { event } = this.$props;
+      events.$on(event, (data) => this.data = data);
     },
     data() {
       return {
-        event: {}
+        data: {}
       }
     }
   }
