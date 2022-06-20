@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('bootstrap-vue'), require('vue'), require('vuex')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'bootstrap-vue', 'vue', 'vuex'], factory) :
-  (global = global || self, factory((global.mailery = global.mailery || {}, global.mailery.app = {}), global.BootstrapVue, global.Vue, global.Vuex));
-}(this, (function (exports, BootstrapVue, Vue, Vuex) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('bootstrap-vue'), require('vue'), require('vuex')) :
+  typeof define === 'function' && define.amd ? define(['bootstrap-vue', 'vue', 'vuex'], factory) :
+  (global = global || self, (global.mailery = global.mailery || {}, global.mailery.app = factory(global.BootstrapVue, global.Vue, global.Vuex)));
+}(this, (function (BootstrapVue, Vue, Vuex) { 'use strict';
 
   BootstrapVue = BootstrapVue && BootstrapVue.hasOwnProperty('default') ? BootstrapVue['default'] : BootstrapVue;
   Vue = Vue && Vue.hasOwnProperty('default') ? Vue['default'] : Vue;
@@ -818,8 +818,11 @@
       undefined
     );
 
-  var events = new Vue();
-
+  //
+  //
+  //
+  //
+  //
   //
 
   var script$2 = {
@@ -832,7 +835,7 @@
 
       var ref = this.$props;
       var event = ref.event;
-      events.$on(event, function (data) { return this$1.data = data; });
+      this.$root.$on(event, function (data) { return this$1.data = data; });
     },
     data: function data() {
       return {
@@ -898,12 +901,9 @@
   Vue.component(__vue_component__$1.name, __vue_component__$1);
   Vue.component(__vue_component__$2.name, __vue_component__$2);
 
-  var app = new Vue({ el: '#app', store: store });
+  var index = new Vue({ el: '#app', store: store });
 
-  exports.app = app;
-  exports.events = events;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return index;
 
 })));
 //# sourceMappingURL=main.umd.js.map

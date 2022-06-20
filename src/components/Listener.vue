@@ -5,8 +5,6 @@
 </template>
 
 <script>
-  import events from '../events';
-
   export default {
     name: 'ui-listener',
     props: {
@@ -14,7 +12,7 @@
     },
     mounted() {
       const { event } = this.$props;
-      events.$on(event, (data) => this.data = data);
+      this.$root.$on(event, (data) => this.data = data);
     },
     data() {
       return {

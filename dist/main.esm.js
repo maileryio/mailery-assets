@@ -812,8 +812,11 @@ __vue_render__$1._withStripped = true;
     undefined
   );
 
-var events = new Vue();
-
+//
+//
+//
+//
+//
 //
 
 var script$2 = {
@@ -826,7 +829,7 @@ var script$2 = {
 
     var ref = this.$props;
     var event = ref.event;
-    events.$on(event, function (data) { return this$1.data = data; });
+    this.$root.$on(event, function (data) { return this$1.data = data; });
   },
   data: function data() {
     return {
@@ -892,7 +895,7 @@ Vue.component(__vue_component__.name, __vue_component__);
 Vue.component(__vue_component__$1.name, __vue_component__$1);
 Vue.component(__vue_component__$2.name, __vue_component__$2);
 
-var app = new Vue({ el: '#app', store: store });
+var index = new Vue({ el: '#app', store: store });
 
-export { app, events };
+export default index;
 //# sourceMappingURL=main.esm.js.map

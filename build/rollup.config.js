@@ -15,7 +15,7 @@ export default (async () => ({
   input: 'src/index.js',
   output: {
     name: 'mailery.app',
-    exports: 'named',
+    exports: 'default',
     globals: {
       'vue': 'Vue',
       'vuex': 'Vuex',
